@@ -2,19 +2,15 @@ import React from "react";
 import './style.css';
 import SignInForm from "../SignInForm";
 import SignUpForm from "../SignUpForm";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-function App() {
-    const router = createBrowserRouter([
-        {
-            path: '/',
-            element: <SignInForm/>
-        },
-        {
-            path: '/signup',
-            element: <SignUpForm/>
-        }
-    ]);
+function App({ authen }) {
+    const auth = authen;
+    let authMethod;
+    if(auth === "sigin"){
+        authMethod = <SignInForm/>;
+    } else{
+        authMethod = <SignUpForm/>;
+    }
     return (
         <div id="page-container">
             <main id="main-container">
@@ -52,7 +48,7 @@ function App() {
                                 </a>
                             </div>
                             <div className="p-4 w-100 flex-grow-1 d-flex align-items-center">
-                                <RouterProvider router={router} />
+                                {authMethod}
                             </div>
                             <div
                                 className="px-4 py-3 w-100 d-lg-none d-flex flex-column flex-sm-row justify-content-between fs-sm text-center text-sm-start">
