@@ -1,41 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 import App from "./components/App";
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter } from 'react-router-dom';
-import DashBoard from './components/Dashboard';
-import { RouterProvider } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import Gallery from './components/MemesGallery';
-import GroupsView from './components/Groups/GroupsView';
-
+import reportWebVitals from "./reportWebVitals";
+import DashBoard from "./components/Dashboard";
+import Gallery from "./components/MemesGallery";
+import GroupsView from "./components/Groups/GroupsView";
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App authen={'sigin'} />
+    path: "/",
+    element: <App authen="sigin" />
   },
   {
-    path: '/signup',
-    element: <App authen={'signup'} />
+    path: "/signup",
+    element: <App authen="signup" />
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <DashBoard />
   },
   {
-    path: '/groupmanage',
+    path: "/groupmanage",
     element: <GroupsView />
   },
   {
-    path: '/memesgallery',
-    element: <Gallery/>
+    path: "/memesgallery",
+    element: <Gallery />
   }
 ]);
 
 const queryClient = new QueryClient();
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
