@@ -1,12 +1,8 @@
 import React from "react";
-import { Card, Button, Container, Row } from "react-bootstrap";
-import Navbar from "../Navbar";
 
 function GroupsManage() {
     return (
         <>
-            <Navbar></Navbar>
-            
             <div class="content content-boxed">
             <div class="input-group">
                 <button type="button" class="btn btn-primary">

@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from "./components/App";
 import reportWebVitals from './reportWebVitals';
-import { Root } from 'react-dom/client';
 import { createBrowserRouter } from 'react-router-dom';
 import DashBoard from './components/Dashboard';
 import { RouterProvider } from 'react-router-dom';
-import SignInForm from './components/SignInForm';
-import SignUpForm from './components/SignUpForm';
-import GroupsManage from './components/GroupsManage';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import Gallery from './components/MemesGallery';
+import GroupsView from './components/Groups/GroupsView';
+
 
 const router = createBrowserRouter([
   {
@@ -26,8 +25,13 @@ const router = createBrowserRouter([
   },
   {
     path: '/groupmanage',
-    element: <GroupsManage />
+    element: <GroupsView />
+  },
+  {
+    path: '/memesgallery',
+    element: <Gallery/>
   }
+
 ]);
 
 const queryClient = new QueryClient();

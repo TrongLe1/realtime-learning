@@ -7,6 +7,7 @@ import App from "../App";
 import { useQuery } from "react-query";
 import authenticationApi from "../../API/AuthenticationApi";
 import memesApi from "../../API/MemesApi";
+import { Link } from "react-router-dom";
 const SignInSchema = yup.object().shape({
     email: yup.string().email('*Email must be a valid email address').required('*Email is a required field'),
     password: yup.string().required('*Password is a required field'),
@@ -16,14 +17,14 @@ function SignInForm() {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(SignInSchema)
     });
-    
+
     const OnSubmit = submitData => {
         console.log(submitData);
         //const { isLoading, error, data } = useQuery('result', memesApi.getMemes);
         //const { isLoading, error, data } = useQuery('loginResult', authenticationApi.login(submitData.email, submitData.password));
     };
-    
-    
+
+
     return (
         <>
             <div className="p-4 w-100 flex-grow-1 d-flex align-items-center">
@@ -65,9 +66,11 @@ function SignInForm() {
                                         </a>
                                     </div>
                                     <div>
-                                        <button type="submit" className="btn btn-lg btn-alt-primary">
-                                            <i className="fa fa-fw fa-sign-in-alt me-1 opacity-50"></i> Sign In
-                                        </button>
+                                        <Link to="/dashboard">
+                                            <button type="submit" className="btn btn-lg btn-alt-primary">
+                                                <i className="fa fa-fw fa-sign-in-alt me-1 opacity-50"></i> Sign In
+                                            </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </form>

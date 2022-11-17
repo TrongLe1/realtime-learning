@@ -2,11 +2,11 @@ import axios from 'axios';
 import queryString from 'query-string'
 
 const axiosClient = axios.create({
-    baseURL: "https://api.imgflip.com/get_memes",
-    headers: {
-        'content-type': 'application/json',
-    },
-    paramsSerializer: params => queryString.stringify(params),
+    baseURL: "https://api.imgflip.com",
+    // headers: {
+    //     'content-type': 'application/json',
+    // },
+    // paramsSerializer: params => queryString.stringify(params),
 });
 
 axios.interceptors.request.use(function (config) {
@@ -18,7 +18,7 @@ axios.interceptors.request.use(function (config) {
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
     if(response && response.data){
-        return response.data;
+        return response;
     }
     return response;
 }, function (error) {
