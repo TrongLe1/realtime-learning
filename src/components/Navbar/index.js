@@ -14,7 +14,7 @@ function Navbar() {
                 <div id="horizontal-navigation-hover-normal" className="d-none d-lg-block mt-2 mt-lg-0">
                     <ul className="nav-main nav-main-horizontal nav-main-hover">
                         <li className="nav-main-item">
-                            <Link to={'/dashboard'} className="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                            <Link to={'/dashboard'} className="nav-main-link active">
                                 <i className="nav-main-link-icon fa fa-home"></i>
                                 <span className="nav-main-link-name">Home</span>
                                 <span className="nav-main-link-badge badge rounded-pill bg-primary">5</span>

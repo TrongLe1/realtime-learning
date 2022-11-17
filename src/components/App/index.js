@@ -5,12 +5,14 @@ import SignUpForm from "../SignUpForm";
 
 function App({ authen }) {
     const auth = authen;
+
     let authMethod;
-    if(auth === "sigin"){
+    if (auth === "sigin") {
         authMethod = <SignInForm/>;
-    } else{
+    } else {
         authMethod = <SignUpForm/>;
     }
+
     return (
         <div id="page-container">
             <main id="main-container">

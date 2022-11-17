@@ -31,7 +31,6 @@ const router = createBrowserRouter([
     path: '/memesgallery',
     element: <Gallery/>
   }
-
 ]);
 
 const queryClient = new QueryClient();

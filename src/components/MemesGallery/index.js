@@ -12,8 +12,7 @@ import {
 import memesApi from '../../API/MemesApi'
 import Navbar from '../Navbar'
 
-
-//use to shuffle memeList
+//Use to shuffle memeList
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -25,6 +24,7 @@ function shuffle(array) {
 function Gallery() {
     const [memeList, setMemeList] = useState([]);
     const { data, refetch } = useQuery('memes', memesApi.getMemes);
+
     useEffect(() => {
         async function fetchData() {
             const data = await memesApi.getMemes();
@@ -63,7 +63,6 @@ function Gallery() {
         );
         display.push(row)
     }
-
 
     return (
         <>

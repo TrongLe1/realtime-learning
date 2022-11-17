@@ -3,27 +3,24 @@ import './style.css';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import App from "../App";
-import { useQuery } from "react-query";
-import authenticationApi from "../../API/AuthenticationApi";
-import memesApi from "../../API/MemesApi";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const SignInSchema = yup.object().shape({
     email: yup.string().email('*Email must be a valid email address').required('*Email is a required field'),
     password: yup.string().required('*Password is a required field'),
 });
 
 function SignInForm() {
+    const navigate = useNavigate();
+
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(SignInSchema)
     });
 
     const OnSubmit = submitData => {
         console.log(submitData);
-        //const { isLoading, error, data } = useQuery('result', memesApi.getMemes);
-        //const { isLoading, error, data } = useQuery('loginResult', authenticationApi.login(submitData.email, submitData.password));
+        navigate('dashboard');
     };
-
 
     return (
         <>
@@ -66,11 +63,9 @@ function SignInForm() {
                                         </a>
                                     </div>
                                     <div>
-                                        <Link to="/dashboard">
-                                            <button type="submit" className="btn btn-lg btn-alt-primary">
-                                                <i className="fa fa-fw fa-sign-in-alt me-1 opacity-50"></i> Sign In
-                                            </button>
-                                        </Link>
+                                        <button type="submit" className="btn btn-lg btn-alt-primary">
+                                            <i className="fa fa-fw fa-sign-in-alt me-1 opacity-50"></i> Sign In
+                                        </button>
                                     </div>
                                 </div>
                             </form>
