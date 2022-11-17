@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/realtime-learning/static/css/main.31d6cfe0.css",
-    "main.js": "/realtime-learning/static/js/main.86ab67f3.js",
+    "main.css": "/realtime-learning/static/css/main.914d1978.css",
+    "main.js": "/realtime-learning/static/js/main.b49b85d8.js",
     "static/js/787.9d427fc8.chunk.js": "/realtime-learning/static/js/787.9d427fc8.chunk.js",
     "index.html": "/realtime-learning/index.html",
-    "main.86ab67f3.js.map": "/realtime-learning/static/js/main.86ab67f3.js.map",
+    "main.914d1978.css.map": "/realtime-learning/static/css/main.914d1978.css.map",
+    "main.b49b85d8.js.map": "/realtime-learning/static/js/main.b49b85d8.js.map",
     "787.9d427fc8.chunk.js.map": "/realtime-learning/static/js/787.9d427fc8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.86ab67f3.js"
+    "static/css/main.914d1978.css",
+    "static/js/main.b49b85d8.js"
   ]
 }
